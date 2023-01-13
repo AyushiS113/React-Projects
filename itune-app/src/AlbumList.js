@@ -61,31 +61,29 @@ const AlbumList = () => {
     const getFilteredData = () => {
 
         if (isvalidArray(albumList)) {
-            if (searchAll) {
 
-                return albumList.filter((d) => {
-                    return (
-                        d.title.label.toLowerCase().includes(searchAll) ||
-                        d.category.attributes.term.toLowerCase().includes(searchAll) ||
-                        d["im:price"].label.toLowerCase().includes(searchAll)
-                    );
+
+            return albumList.filter((d) => {
+                return (
+                    d.title.label.toLowerCase().includes(searchAll) ||
+                    d.category.attributes.term.toLowerCase().includes(searchAll) ||
+                    d["im:price"].label.toLowerCase().includes(searchAll)
+                );
+            })
+
+                .slice(0, 100)
+                .filter((d) => {
+                    if (categorySearch) {
+                        return d.category.attributes.label.toLowerCase() === categorySearch.toLowerCase()
+                    }
+                    return true;
                 })
-            } else {
-                return albumList
-                    .slice(0, 100)
-                    .filter((d) => {
-                        if (categorySearch) {
-                            return d.category.attributes.label.toLowerCase() === categorySearch.toLowerCase()
-                        }
-                        return true;
-                    })
-                    .filter((d) => {
-                        if (dateSearch) {
-                            return d["im:releaseDate"]["attributes"].label.includes(dateSearch);
-                        }
-                        return true;
-                    });
-            }
+                .filter((d) => {
+                    if (dateSearch) {
+                        return d["im:releaseDate"]["attributes"].label.includes(dateSearch);
+                    }
+                    return true;
+                });
         }
 
     };
