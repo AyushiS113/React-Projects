@@ -1,0 +1,19 @@
+.example-wrapper {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+  
+  #myGrid {
+    flex: 1 1 0px;
+    width: 100%;
+  }
+  
+  .latitude {
+    background-color: rgb(207, 205, 205) !important;
+  }
+  
+  .lati {
+    background-color: rgb(161, 161, 160) !important;
+  }
+  

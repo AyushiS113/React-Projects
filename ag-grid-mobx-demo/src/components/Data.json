@@ -1,0 +1,51 @@
+[
+    {
+        "avatar": "https://www.melivecode.com/users/1.png",
+        "fname": "Karn",
+        "lname": "Yong",
+        "username": "karnggg.yong@melivecode.com",
+        "email": "karn.yong@melivecode.com"
+    },
+    {
+        "avatar": "https://www.melivecode.com/users/2.png",
+        "fname": "Ivy",
+        "lname": "Cal",
+        "username": "ivyyyy.cal@melivecode.com",
+        "email": "ivy.cal@melivecode.com"
+    },
+    {
+        "avatar": "https://www.melivecode.com/users/4.png",
+        "fname": "Gayla",
+        "lname": "Bertrand",
+        "username": "gaylaaa.bertrand@melivecode.com",
+        "email": "gayla.bertrand@melivecode.com"
+    },
+    {
+        " avatar": "https://www.melivecode.com/users/5.png",
+        "fname": "Benjamin",
+        "lname": "Chaz",
+        "username": "benjaminnn.chaz@melivecode.com",
+        "email": "benjamin.chaz@melivecode.com"
+    },
+    {
+        " avatar": "https://www.melivecode.com/users/5.png",
+        "fname": "abc",
+        "lname": "abc",
+        "username": "abc@gmail.com",
+        "email": "abc@gmail.com"
+    },
+    {
+        " avatar": "https://www.melivecode.com/users/5.png",
+        "fname": "xyz",
+        "lname": "xyz",
+        "username": "xyz@gmail.com",
+        "email": "xyz@gmail.com"
+    },
+    {
+        "avatar": "https://www.melivecode.com/users/5.png",
+        "fname": "xyzzz",
+        "lname": "xyz",
+        "username": "xyzzz@gmail.com",
+        "email": "xyzzz@gmail.com"
+    }
+]
