@@ -1,0 +1,35 @@
+[
+    {
+      "coverimage": "https://www.melivecode.com/attractions/1.jpg",
+      "detail": "Phi Phi Islands are a group of islands in Thailand between the large island of Phuket and the Malacca Coastal Strait of Thailand.",
+      "id": 1,
+      "latitude": 7.737619,
+      "longitude": 98.7068755,
+      "name": "Phi Phi Islands"
+    },
+    {
+      "coverimage": "https://www.melivecode.com/attractions/2.jpg",
+      "detail": "Eiffel Tower is one of the most famous structures in the world. Eiffel Tower is named after a leading French architect and engineer. It was built as a symbol of the World Fair in 1889.",
+      "id": 2,
+      "latitude": 48.8583736,
+      "longitude": 2.2922926,
+      "name": "Eiffel Tower"
+    },
+    {
+      "coverimage": "https://www.melivecode.com/attractions/3.jpg",
+      "detail": "Times Square has become a global landmark and has become a symbol of New York City.",
+      "id": 3,
+      "latitude": 40.7589652,
+      "longitude": -73.9893574,
+      "name": "Times Square"
+    },
+    {
+      "coverimage": "https://www.melivecode.com/attractions/4.jpg",
+      "detail": "Mount Fuji is the highest mountain in Japan, about 3,776 meters (12,388 feet) situated to the west of Tokyo. Mount Fuji can be seen from Tokyo on clear days.",
+      "id": 4,
+      "latitude": 35.3606422,
+      "longitude": 138.7186086,
+      "name": "Mount Fuji"
+    }
+  ]
+  

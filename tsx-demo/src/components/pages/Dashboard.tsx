@@ -3,16 +3,14 @@ import { observer } from "mobx-react";
 import React from "react";
 import useStore from "../stores/CommonStore";
 import { ArrowUpOutlined, UserOutlined } from "@ant-design/icons";
-const Dashboard=observer((props)=> {
+const Dashboard =observer((props:any)=> {
   const login=useStore()
   const { Meta } = Card;
-  login.LoginStore.AuthUser()
-  const user=login.LoginStore.auth_user
-  const totalUser=login.userStore.user_data
-  
+  login.LoginStore.authUser()
+  const user:any =login.LoginStore.auth_user
+  const totalUser:any = login.UserStore.user_data
   return (
-    <div>
-      <div className="card" style={{ height: "400px" }}>
+      <div className="card" style={{ height: "auto" }}>
         <Card
           hoverable
           style={{ width: 240, marginTop: "30px", marginLeft: "50px" }}
@@ -34,7 +32,7 @@ const Dashboard=observer((props)=> {
         />
       </Card>
       </div>
-    </div>
+
   );
 })
 export default Dashboard

@@ -1,14 +1,14 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import { Input, Button, Form } from 'antd'
 import { useState } from 'react'
 import { observer } from 'mobx-react'
 import useStore from '../stores/CommonStore'
-const AddUser = observer((props) => {
+
+const AddUser = observer((props: any) => {
     const usersStore = useStore()
     const [btndisabled, setBtnDisabled] = useState(false)
-
-    const update = usersStore.userStore.setupdate_data
-    useEffect(() => form.resetFields(), [update])
+    const update: any = usersStore.UserStore.setUpdate_data
+    var initialValues = {}
 
     const formItemLayout = {
         labelCol: {
@@ -20,29 +20,43 @@ const AddUser = observer((props) => {
             sm: { span: 14 },
         },
     }
-    var initialValues = {
-        fname: update.fname,
-        lname: update.lname,
-        username: update.username,
-        email: update.username,
+
+    if (props.init === true) {
+        initialValues = {
+            fname: update.fname,
+            lname: update.lname,
+            username: update.username,
+            email: update.username,
+        }
+    } else {
+        initialValues = ''
     }
+
     const validateMessages = {}
     const [form] = Form.useForm()
-    const handleOk = (values) => {
-        
-        console.log(values)
-        usersStore.userStore.addUser(values)
-        form.resetFields()
-        props.pass()
-    }
-    const handleUpdate = (values) => {
-        const update_val = { ...values, id: update.id, avatar: update.avatar }
-        usersStore.userStore.update_user(update_val)
+
+    const handleOk = (values: object) => {
+        usersStore.UserStore.addUser(values)
         form.resetFields()
         props.pass()
     }
 
-    const onValuesChange = (changedValues, allValues) => {
+    const handleUpdate = (values: object) => {
+        const update_val = { ...values, id: update.id, avatar: update.avatar }
+        usersStore.UserStore.update_user(update_val)
+        form.resetFields()
+        props.pass()
+    }
+
+    const onValuesChange = (
+        changedValues: any,
+        allValues: {
+            fname: string
+            lname: string
+            username: string
+            email: string
+        }
+    ) => {
         if (
             allValues.fname !== undefined &&
             allValues.lname !== undefined &&
@@ -53,9 +67,6 @@ const AddUser = observer((props) => {
         } else {
             setBtnDisabled(true)
         }
-
-        console.log(allValues)
-        console.log(changedValues)
     }
 
     const cancel = () => {
@@ -70,7 +81,7 @@ const AddUser = observer((props) => {
                 validateMessages={validateMessages}
                 form={form}
                 onValuesChange={onValuesChange}
-                initialValues={props.init === true ? initialValues : ''}
+                initialValues={initialValues}
             >
                 <Form.Item
                     name={['fname']}
