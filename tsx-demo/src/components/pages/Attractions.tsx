@@ -93,7 +93,7 @@ const Attractions = observer(() => {
     }
 
     const user = attract.Attract.total_data
-
+    console.log('user', user)
     const data: any = {
         columnDef: [
             {
@@ -203,12 +203,20 @@ const Attractions = observer(() => {
                             label: 20,
                         },
                         {
-                            value: user,
+                            value: user ? user : 10,
                             label: 'All',
                         },
                     ]}
                 />{' '}
                 entries &nbsp;&nbsp;
+                <Modal
+                    open={isDeleteModalOpen}
+                    onOk={() => confirm(attractionDelete!)}
+                    onCancel={cancelAttraction}
+                    okText="Yes"
+                    cancelText="No"
+                    title="Are you sure to delete this attraction/places ??"
+                ></Modal>
             </div>
             <Drawer
                 title="Add Attraction/Places"
@@ -240,14 +248,7 @@ const Attractions = observer(() => {
             >
                 <AttractionAdd pass={onUpdateClose} init={initialValues} />
             </Drawer>
-            <Modal
-                open={isDeleteModalOpen}
-                onOk={() => confirm(attractionDelete!)}
-                onCancel={cancelAttraction}
-                okText="Yes"
-                cancelText="No"
-                title="Are you sure to delete this attraction/places ??"
-            ></Modal>
+
             <Drawer
                 title="Attraction Information"
                 open={isDrawerOpen}

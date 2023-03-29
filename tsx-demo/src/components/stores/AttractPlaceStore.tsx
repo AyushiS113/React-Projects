@@ -93,7 +93,7 @@ class Attract {
                     ),
                 }
                 this.getAttraction(payload).then((res: any) => {
-                    // this.setPageData(res.data.total)
+                    this.setPageData(res.data.total)
                     params.success({
                         rowData: res.data.data,
                         rowCount: res.data.total,
@@ -120,8 +120,8 @@ class Attract {
     }
 
     //call api for add attraction
-    addAttraction(value: AttractionInterface) {
-        axios
+    addAttraction = async (value: AttractionInterface) => {
+        await axios
             .post(`${this.authUrl}/create`, value)
             .then((res) => {
                 message.success('success')
@@ -138,8 +138,8 @@ class Attract {
     }
 
     //call api for update attraction
-    UpdateAttraction(val: AttractionInterface) {
-        axios
+    UpdateAttraction = async (val: AttractionInterface) => {
+        await axios
             .put(`${this.authUrl}/update`, val)
             .then((res) => {
                 message.success(res.data.message)
@@ -159,8 +159,8 @@ class Attract {
     }
 
     //call api for delete attraction
-    DeleteAttraction(userid: number) {
-        axios
+    DeleteAttraction = async (userid: number) => {
+        await axios
             .delete(`${this.authUrl}/delete`, {
                 data: { id: userid },
             })
@@ -178,8 +178,8 @@ class Attract {
     }
 
     //call api for display specific attraction
-    showAttraction(id: number) {
-        axios
+    showAttraction = async (id: number) => {
+        await axios
             .get(`${this.url}/${id}`)
             .then((res) => {
                 this.setAttract(res.data.attraction)
