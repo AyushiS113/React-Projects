@@ -93,7 +93,7 @@ class Attract {
                     ),
                 }
                 this.getAttraction(payload).then((res: any) => {
-                    this.setPageData(res.data.total)
+                    //this.setPageData(res.data.total)
                     params.success({
                         rowData: res.data.data,
                         rowCount: res.data.total,
